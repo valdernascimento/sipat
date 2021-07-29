@@ -1,0 +1,55 @@
+{
+  "_from": "cordova-plugin-camera-preview-cc@~0.10.0",
+  "_id": "cordova-plugin-camera-preview-cc@0.10.1",
+  "_inBundle": false,
+  "_integrity": "sha512-9DkO8Bb7UfVAawyFmpUxVHovV++vs05J1ytiHNcP8fSqt9yfrAN8NcsSqy9Z76tRHbpXPBIEvOAE6U9V9vYNyw==",
+  "_location": "/cordova-plugin-camera-preview-cc",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-plugin-camera-preview-cc@~0.10.0",
+    "name": "cordova-plugin-camera-preview-cc",
+    "escapedName": "cordova-plugin-camera-preview-cc",
+    "rawSpec": "~0.10.0",
+    "saveSpec": null,
+    "fetchSpec": "~0.10.0"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-camera-preview-cc/-/cordova-plugin-camera-preview-cc-0.10.1.tgz",
+  "_shasum": "62ee483911e687a4fae54372a2c4d1aa1e63ab22",
+  "_spec": "cordova-plugin-camera-preview-cc@~0.10.0",
+  "_where": "D:\\www\\app\\ponteiroAdmin",
+  "author": {
+    "name": "Calidad Cloud",
+    "email": "app@calidadcloud.com",
+    "url": "www.calidadcloud.com"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "cordova": "*"
+  },
+  "deprecated": false,
+  "description": "Plugin based on cordova-plugin-camera-preview, settting user-feature autfocus to false",
+  "devDependencies": {},
+  "keywords": [
+    "cordova",
+    "phonegap",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "android",
+    "ios",
+    "ionic",
+    "camera",
+    "cam",
+    "camera-preview",
+    "preview"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-camera-preview-cc",
+  "typings": "typescript/CameraPreview.d.ts",
+  "version": "0.10.1"
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html style="background: #222;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy"  content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src * ;img-src 'self' data: content: ; " />-->
+
+    <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src
+        * Create your own at http://cspisawesome.com
+        -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />-->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Sipat Online</title>
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.5.css">
+
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/colors/branco.css" />
+    <link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+    <link type="text/css" rel="stylesheet" href="css/modal.css" />
+    <link type="text/css" rel="stylesheet" href="rmuploadUnico/css/rmupload.css" />
+
+
+</head>
+
+<body class="">
+
+    <!--==================================================================================================================================================================-->
+    <div data-role="page" id="index">
+
+    </div>
+    <!--==================================================================================================================================================================-->
+    <div data-role="page" id="login" class="secondarypage" data-theme="b">
+        <div data-role="header" data-position="fixed">
+            <div class="nav_center_logo" style="width: 100%;">
+
+            </div>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="content-block-login">
+                <div class="form_logo">
+                    <img style="width: 112px;" src="images/logo.png"><br>
+                    Sipat Online<br>
+                    <hr> LOGIN
+                </div>
+                <div class="loginform">
+                    <form method="post">
+                        <input type="" style="text-align: center ; color:red;display: none;"
+                            value="CNPJ/CPF ou Senha Icorretos" readonly="" class="form_input required inputError"
+                            id="errologin" data-role="none" />
+                        <input type="number" name="Username" style="text-align: center" value=""
+                            class="form_input required celular" id="cpfLogin" placeholder="CNPJ ou CPF"
+                            data-role="none" />
+                        <input type="password" name="Password" style="text-align: center" value=""
+                            class="form_input required" id="senhaLogin" placeholder="Senha" data-role="none" />
+                        <div class="forgot_pass"><a href="#esqueciSenha" data-transition="slidedown">Equeci minha
+                                senha</a></div>
+                        <input type="submit" name="submit" class="form_submit" id="btnLogar" data-role="none"
+                            value="Entrar" />
+                    </form>
+                    <!--<div class="signup_bottom">
+                            <p>Não tem uma conta</p>
+                            <a href="#registrar">Criar Conta</a>
+                        </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==================================================================================================================================================================-->
+    <div data-role="page" id="home" class="secondarypage" data-theme="b">
+
+        <div class="modal modalAvaliacao">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title center">Avaliação</h5>
+                    </div>
+                    <div class="modal-body center">
+                        <img data-value="1" src="images/starW.png">
+                        <img data-value="2" src="images/starW.png">
+                        <img data-value="3" src="images/starW.png">
+                        <img data-value="4" src="images/starW.png">
+                        <img data-value="5" src="images/starW.png">
+                    </div>
+                    <div class="loginform">
+                        <button class="form_submit btn-cancel" data-role="close">FECHAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modalOfflines">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title center">Enviando Offlines</h5>
+                    </div>
+                    <div class="modal-body center">
+                        <div class="modal-body" style="text-align: center">
+                            <img src="images/loadingG.gif">
+                            <div class="progress" style="margin: 20px;">
+                                <div class="progress-bar progressoOfflines" role="progressbar" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div data-role="header" data-position="fixed" class="fixed">
+
+            <div class="nav_center_logo">Sipat Online</div>
+            <div class="nav_right_button"><a href="#right-panel"><img src="images/icons/black/user.png" alt=""
+                        title="" /></a></div>
+            <div class="clear"></div>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="pages_maincontent">
+                <div class="col-2 icone"><a href="#colaboradores"><img
+                            src="images/icons/color/colaboradores.png"><br>Ver Colaboradores</a></div>
+                <div class="col-2 icone"><a href="#inserirDados"><img src="images/icons/color/medicina.png"><br>Inserir Dados</a></div>
+                <div class="col-2 icone"><a href="http://www.saude.mt.gov.br/informe/584" target="_blank"><img src="images/icons/color/covid-19.png"><br>Informativos COVID-19</a></div>
+                <div class="col-2 icone"><a href="https://sites.google.com/teakrc.com/intranet/menu" target="_blank"><img
+                            src="images/icons/color/tvtrc.png"><br><strong>TRC TV</strong></a></div>
+            </div>
+        </div>
+
+        <div data-role="panel" id="right-panel" class="" data-display="reveal" style="position: fixed"
+            data-position="right">
+            <div class="user_login_info">
+                <div class="user_thumb_container">
+                    <img src="images/profile.jpg" alt="" title="" />
+                    <div class="user_thumb">
+                        <img src="images/default.jpg" title="" rel="IMGPERFIL" href="" class="fotoUser" alt=""
+                            title="" />
+                    </div>
+                </div>
+                <div class="user_details">
+                    <p class="userNome"></p>
+                </div>
+                <nav class="user-nav">
+                    <ul>
+                        <li><a href="" id="btnUpdateColaboradores" data-transition="slidefade"><img
+                                    src="images/icons/black/update.png" alt="" title="" /><span>Atualizar
+                                    Colaboradores</span></a></li>
+                        <li><a href="" id="sendOfflines" data-transition="slidefade"><img
+                                    src="images/icons/black/uploadOfflines.png" alt="" title="" /><span>Enviar
+                                    Offlines</span></a></li>
+                        <!--<li><a href="#sugestao" data-transition="slidefade"><img src="images/icons/black/light.png" alt="" title="" /><span>Sugestões</span></a></li>
+                            <li><a href="" id="btnAvaliacao" data-transition="slidefade"><img src="images/icons/black/star.png" alt="" title="" /><span>Avaliação</span></a></li>-->
+                        <li><a href="#login" data-transition="slidefade"><img src="images/icons/black/off.png" alt=""
+                                    title="" /><span>Sair</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="close_loginpopup_button"><a href="#" data-rel="close"><img
+                        src="images/icons/white/menu_close.png" alt="" title="" /></a></div>
+        </div>
+    </div>
+    <!--==================================================================================================================================================================-->
+    <div data-role="page" id="colaboradores" class="secondarypage" data-theme="b">
+
+        <div class="modal modalViewColaborador">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title center">Visualizar</h5>
+                    </div>
+                    <div class="modal-body center">
+                        <p><img class="fotoColaborador" style="height: 120px;border-radius: 50%"></p>
+                        <p><strong>Nome: </strong><span class="nomeCol maiusculo"></span></p>
+                        <p><strong>CPF: </strong><span class="CPFCol"></span></p>
+                        <p><strong>PIS: </strong><span class="PISCol"></span></p>
+                        <p><strong>E-mail: </strong><span class="emailCol minusculo"></span></p>
+                        <p><strong>Empresa: </strong><span class="empresaCol maiusculo"></span></p>
+                        <p><strong>Nascimento: </strong><span class="nascimentoCol"></span></p>
+                        <p><strong>Idade: </strong><span class="idadeCol maiusculo"></span></p>
+                        <p><strong>Sexo: </strong><span class="sexoCol maiusculo"></span></p>
+                        <p><strong>Setor: </strong><span class="setorCol maiusculo"></span></p>
+                        <p><strong>Funcao: </strong><span class="funcaoCol maiusculo"></span></p>
+                        <p><strong>Coligada: </strong><span class="coligadaCol maiusculo"></span></p>
+                    </div>
+                    <div class="loginform">
+                        <button class="form_submit btn-cancel" data-role="close">FECHAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="header" data-position="fixed">
+            <div class="button_back"><a href="#home"><img src="images/icons/black/back.png" alt="" title="" /></a></div>
+            <div class="nav_center_logo" style="width: 100%;">Sipat Online</div>
+            <div class="clear"></div>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="content-block-login">
+                <div class="form_logo">
+                    <img src="images/icons/color/colaboradores.png" style="vertical-align: middle;width: 25px">
+                    Colaboradores
+                </div>
+                <div>
+                    <table style="width: 100%;" border="1" id="listaColaboradores"></table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--==================================================================================================================================================================-->
+    <div data-role="page" id="inserirDados" class="secondarypage" data-theme="b">
+
+
+
+        <div data-role="header" data-position="fixed">
+            <div class="button_back"><a href="#home"><img src="images/icons/black/back.png" alt="" title="" /></a></div>
+            <div class="nav_center_logo" style="width: 100%;">Sipat Online</div>
+            <div class="clear"></div>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="content-block-login">
+                <div class="form_logo">
+                    <img src="images/icons/color/medicina.png" style="vertical-align: middle;width: 25px"> Inserir Dados
+                </div>
+                <div id="inserirDadosInicio">
+                    <div id="barraBusca">
+                        <input type="text" class="inputBusca" id="inputBusca" data-role="none" placeholder="Pesquisar">
+                        <img id="imgBusca" data-acao="busca" src="images/icons/black/view.png">
+                        <div>
+                            <table id="resultBusca"></table>
+                        </div>
+                        <div id="dadosInsert">
+                            <div>
+                                <table class="tableInfo" style="width: 100%;">
+                                    <tr>
+                                        <td rowspan="7" class="center foto">
+                                            <img style="width: 75px;border-radius: 50%"
+                                                src="images/defaultGrey.jpg"><br><span class="nome upper"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="codigo"><strong>Código:</strong> <span></span></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="cpf"><strong>CPF: </strong><span></span></td>
+                                        <td class="rg"><strong>RG:</strong> <span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="nascimento"><strong>D. Nasc.:</strong> <span></span></td>
+                                        <td class="idade"><strong>Idade:</strong> <span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="setor upper"><strong>Setor:</strong> <span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="funcao upper"><strong>Função:</strong> <span></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="coligada upper"><strong>Coligada:</strong> <span></span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <hr>
+
+                    <table class="tableInsert" style="margin: auto">
+                        <tr>
+                            <th></th>
+                            <th class="center">Anterior</th>
+                            <th class="center">Atual</th>
+                        </tr>
+                        <tr>
+                            <td class="right">Temperatura</td>
+                            <td class="center"><input id="temperaturaAnt" disabled data-role="none" class="center"></td>
+                            <td class="center"><input id="temperatura" type="number" data-role="none"
+                                    class="center decimal"></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Glicemia</td>
+                            <td class="center"><input id="glicemiaAnt" disabled data-role="none" class="center"></td>
+                            <td class="center"><input id="glicemia" type="number" data-role="none"
+                                    class="center inteiro"></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Pressão Arterial</td>
+                            <td class="center"><input id="pressaoarterialAnt" disabled data-role="none" class="center">
+                            </td>
+                            <td class="center"><input id="pressaoarterial" data-role="none" class="center pressao"></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Peso (Kilos)</td>
+                            <td class="center"><input id="pesoAnt" disabled data-role="none" class="center"></td>
+                            <td class="center"><input id="peso" type="number" data-role="none" class="center decimal">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Altura (Metros)</td>
+                            <td class="center"><input id="alturaAnt" disabled data-role="none" class="center"></td>
+                            <td class="center"><input id="altura" type="number" data-role="none" class="center decimal">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Tam. Camiseta</td>
+                            <td class="center"><input id="camisetaAnt" disabled data-role="none" class="center"></td>
+                            <td class="center"><input id="camiseta" data-role="none" class="center upper"></td>
+                        </tr>
+                        <tr>
+                            <td class="right">Nº Calça</td>
+                            <td class="center"><input id="calcaAnt" disabled data-role="none" class="center"></td>
+                            <td class="center"><input id="calca" type="text" data-role="none" class="center">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="right">Nº Calçado</td>
+                            <td class="center"><input id="calcadoAnt" disabled data-role="none" class="center"></td>
+                            <td class="center"><input id="calcado" type="number" data-role="none"
+                                    class="center inteiro"></td>
+                        </tr>
+
+                    </table>
+                    <button id="btnSalvaDados" class="ui-btn ui-shadow ui-corner-all" style="width: 90%; margin: auto;"
+                        disabled="">Salvar</button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--==================================================================================================================================================================-->
+    <div data-role="page" id="sugestao" class="secondarypage" data-theme="b">
+
+        <div data-role="header" data-position="fixed">
+            <div class="button_back"><a href="#home"><img src="images/icons/black/back.png" alt="" title="" /></a></div>
+            <div class="nav_center_logo" style="width: 100%;">Sipat Online</div>
+            <div class="clear"></div>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="content-block-login">
+                <div class="form_logo">
+                    Enviar Sugestão
+                </div>
+                <div class="loginform">
+                    <form method="post">
+
+                        <strong class="labelForm">Sua Sugestão</strong>
+
+                        <textarea id="sugestaoTexto" rows="5" class="form_input upper" data-role="none"
+                            placeholder=""></textarea>
+                        <div id="resultAbonosSalvar" style="display: none"></div>
+                        <input type="submit" name="" value="SALVAR" class="form_submit" data-role="none"
+                            id="SugestaoSalvar" style="margin-bottom: 15px;">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--==================================================================================================================================================================-->
+    <div data-role="page" id="esqueciSenha" class="secondarypage" data-theme="b">
+        <div data-role="header" data-position="fixed">
+            <div class="button_back"><a href="#login"><img src="images/icons/black/back.png" alt="" title="" /></a>
+            </div>
+            <div class="nav_center_logo" style="width: 100%;"></div>
+            <div class="clear"></div>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <div class="content-block-login">
+                <div class="form_logo">
+                    <img style="width: 112px;" src="images/logo.png"><br>
+                    Sipat Online
+                    <hr>RECUPERAR SENHA</div>
+                <div class="loginform">
+                    <div style="padding: 3%; text-align: center;">Para recuperar a senha Acesse o site: <a id="linkSite"
+                            target="_blank" href="https://ponteiro.online/Painel">https://ponteiro.online</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--==================================================================================================================================================================-->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/jquery.swipebox.js"></script>
+    <script src="js/jquery.mobile-custom.js"></script>
+    <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+
+
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+</body>
+
+</html>

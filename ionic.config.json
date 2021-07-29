@@ -1,0 +1,7 @@
+{
+  "name": "sipat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,451 @@
+@font-face {
+    font-family: audiowide;
+    src: url('fonts/Audiowide-Regular.ttf');
+}
+#swipebox-caption{
+    text-transform: uppercase !important;
+}
+.ui-loading .ui-loade{
+    display: none !important;
+}
+.modal.modalAvaliacao img{
+    width: 35px;
+}
+#swipebox-close{
+    right: 0 !important;
+    top: 0 !important;
+}
+.imgColList{
+    vertical-align: middle;
+    width: 30px;
+    border-radius: 50%;
+}
+#listaColaboradores{
+    border-collapse: collapse;
+    border-color: #ccc;
+}
+#listaColaboradores .th th{
+    background: #ccc;
+}
+.iconViewColaborador{
+    vertical-align: middle;
+    width: 25px;
+}
+.maiusculo{
+    text-transform: uppercase;
+}
+.minusculo{
+    text-transform: lowercase;
+}
+.icone{
+    text-align: center;
+    padding: 10px 3px 15px;
+}
+.user-nav li:hover{
+    background: rgba(0,0,0,0.3) !important;
+}
+.nav_center_logo{
+    font-family: audiowide;
+}
+#barraBusca{
+    margin: 5px;
+}
+#barraBusca.aberto {
+    
+    border: none;
+    border-radius: 5px;
+}
+#barraBusca input.inputBusca{
+    width:100%;
+    box-sizing: border-box;
+    height: 30px;
+    vertical-align: middle;
+    padding: 0 37px 0 5px;
+    outline: none;
+    border: 1px solid #999;
+    margin: auto;
+    border-radius: 5px;
+}
+#barraBusca input.inputBusca.aberto{
+    border-bottom: none !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#barraBusca img#imgBusca{
+    width: 27px;
+    vertical-align: middle;
+    position: absolute;
+    margin-left: -32px;
+    margin-top: 2px;
+}
+#barraBusca #resultBusca .imgFoto{
+    width: 75px;
+    border-radius: 50%;
+}
+#resultBusca{
+    display: none;
+    z-index: 2000;
+    border: 1px solid #999;
+    border-top: none;
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 10px;
+    position: absolute;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+
+}
+#resultBusca tbody{
+    display: table;
+    width: 100%;
+}
+#resultBusca td{
+    padding-bottom: 10px;
+}
+#resultBusca .imgLoadColaborador{
+    width: 35px;
+}
+.fixed{
+    position: fixed !important;
+}
+.page_content{
+    width: 100% !important;
+    padding: 0 !important;
+}
+#dadosInsert .tableInfo td{
+    background: #ddd;
+    padding: 2px 3px;
+}
+hr{
+    width: 90% !important;
+    height: 0px;
+    color: #ccc;
+    border: 1px solid;
+}
+body{
+    background: #fff;
+}
+body>div[data-role="page"]{
+    display: none;
+}
+body>div#index{
+    display: block;
+}
+#index{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+.inputError{
+    border: 1px solid #f00 !important;
+}
+.listaPontos, .listaAbonos{
+    width: 100%;
+    border-spacing: 0;
+}
+.listaPontos tr:nth-child(even), .listaAbonos tr:nth-child(even)  {
+    background-color: #f2f2f2
+}
+.listaPontos td, .listaAbonos td{
+    vertical-align: middle;
+    padding: 3px 5px;
+}
+.listaPontos img, .listaAbonos img{
+    width: 17px;
+}
+.labelForm{
+    display: block;
+    padding-top: 10px;
+    clear: both;
+}
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+.left{
+    text-align: left;
+}
+.col-3{
+    width: 33.3%;
+    box-sizing: border-box;
+    float: left
+}
+.col-2{
+    width: 50%;
+    box-sizing: border-box;
+    float: left
+}
+#index img{
+    position: absolute;
+    width: 100px;
+    top:50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    display: block;
+    padding: 0;
+}
+input[disabled]{
+    opacity: 1 !important;
+}
+.inputError{
+    border-color: red !important;
+}
+.userEmail{
+    text-transform: lowercase;
+}
+.userNome{
+    text-transform: uppercase;
+}
+.button_back{
+    display:block;
+}
+.button_back a{
+    display:inline-block;
+    width:60px;
+    height:60px;
+    margin:auto;
+    padding:0;
+    text-align:center;
+    position:absolute;
+    top:3px;
+    left: 3px;
+    z-index: 2000;
+}
+.button_back a img{
+    display:block;
+    max-width:60%;
+    margin:5px; 
+}
+#perfil .fotoUser{
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    border: 3px solid #ccc;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+
+}
+.fotoUser{ background: #fff !important;}
+
+.success{
+    color: #009933;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12pt;
+}
+.danger{
+    color: red;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12pt;
+}
+.acaoCamera {
+    text-align: center;
+}
+.acaoCamera span{
+    color: blue;
+    display: inline-block;
+    text-align: center;
+    margin: -10px auto 8px;
+    font-size: 11pt;
+    padding: 4px 13px;
+}
+.acaoCamera span#btnCancelTroca{
+    display: none;
+}
+.upper, .upper option{
+    text-transform: uppercase;
+}
+.lower, .lower option{
+    text-transform: lowercase;
+}
+.alert{
+    display: block;
+    border-radius: 2px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 12px;
+}
+.alert::after{
+    box-sizing: border-box;
+}
+.alert.alert-success{
+    border: 1px solid green;
+    background: #afa;
+    color: #000; 
+}
+.alert.alert-info{
+    border: 1px solid #50BAC9;
+    background: #CEEBF0;
+    color: #000; 
+}
+.alert.alert-warning{ 
+    border: 1px solid #FFCC00;
+    background: #FFEEA8;
+    color: #000; 
+}
+.alert.alert-danger{
+    border: 1px solid red;
+    background: #faa;
+    color: #000;
+}
+
+.openDialogo{
+    transition: 0.2s;
+}
+.dialogo{
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+/*----- ANDROID ------------------------------*/
+.dialogo.android ul{
+    margin: auto; 
+    padding: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    max-width: 450px;
+    left: 0;
+    right: 0;
+}
+.dialogo.android ul li{
+    list-style: none;
+    background: rgb(255,255,255);
+    font-weight: 400;
+}
+.dialogo.android ul li:first-child {
+    border-top: 2px solid #999;
+}
+.dialogo.android ul li[data-role="cancel"]{
+    padding-top: 8px;
+}
+.dialogo.android ul li a{
+    font-size: 14pt;
+    display: block;
+    padding: 12px 0 12px 45px;
+    color: #333;
+    font-family: arial; 
+}
+.dialogo.android ul li a:hover{
+    background: #ccc;
+}
+.dialogo.android ul li[data-role="danger"] a{
+    color:red !important;
+}
+.dialogo.android ul li[data-role="cancel"] a{
+    background: url(../images/iconsOS/android/cancel.png) 13px center / 18px 18px no-repeat;
+}
+.dialogo.android ul li[data-role="camera"] a{
+    background: url(../images/iconsOS/android/camera.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="album"] a{
+    background: url(../images/iconsOS/android/album.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="arquivo"] a{
+    background: url(../images/iconsOS/android/arquivo.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="viagem"] a{
+    background: url(../images/iconsOS/android/viagem.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="pacote"] a{
+    background: url(../images/iconsOS/android/pacote.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="excluir"] a{
+    background: url(../images/iconsOS/android/trash.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="editar"] a{
+    background: url(../images/iconsOS/android/editar.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="info"] a{
+    background: url(../images/iconsOS/android/info.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="sugestao"] a{
+    background: url(../images/iconsOS/android/sugestao.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="whatsapp"] a{
+    background: url(../images/iconsOS/android/whatsapp.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="email"] a{
+    background: url(../images/iconsOS/android/email.png) 13px center / 25px 25px no-repeat;
+}
+.dialogo.android ul li[data-role="sms"] a{
+    background: url(../images/iconsOS/android/sms.png) 13px center / 25px 25px no-repeat;
+}
+
+.navBar{
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    bottom: 0;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+
+}
+
+.navBar div{
+    background: #eee;
+    padding: 5px 0;
+    font-weight: bold;
+    font-family: arial;
+    color: #515151;
+}
+.navBar div img{
+    width: 40px;
+    display: block;
+    margin: auto; 
+}
+.navBar div.active{
+    color: #0066ff;
+}
+.navBar div img{
+    display: none;
+}
+.navBar div.active img.a{
+    display: block;
+}
+.navBar div:not(.active) img.n{
+    display: block;
+}
+.pagina{
+    display: none;
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+    height: 100%;
+    padding: 5px 5px 150px;
+    box-sizing: border-box;
+    transition: 1s;
+}
+.pagina.active{
+    display: block;
+    transition: 1s;
+}
+.pagina .loading{
+    text-align: center;
+}
+.tableInsert{
+    font-size: 18px;
+}
+.tableInsert input{
+    width: 70px;
+}
+#btnSalvaDados{
+    background: #009933 !important;
+}
